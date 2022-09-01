@@ -20,6 +20,7 @@
         - [ ] read the opening comments for next lesson
         - [ ] comment block teaches how to add executable permissions
 
+- [ ] card file - uncomment rm command
 - [ ] add instructor guide
 - [ ] add ascii art
 - [ ] basic map on entry scroll
@@ -45,14 +46,14 @@
 
 ## Walkthrough Steps
 
-1. Entrance
+### Entrance
     1. scroll - informs ls and cd - look around and move
     2. .terminal - "unseen"
         1. after gallery: ln -s ../../../../.basement portal from place of singing flame
             1. this is intended to be run from `d-wing/strong/nursery/lab`
     3. move to hallway/
 
-### hallway
+### Hallway
 
 2. Hallway
     1. scroll - informs of ls -F 
@@ -278,8 +279,8 @@ Jump into the `.basement` from creating the (scrap) portal in `lab/` directory.
 
 
 -----------------------------------------------------------------------
-# TIP:
-# - 
+TIP:
+- 
 
 
 

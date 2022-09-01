@@ -185,6 +185,23 @@ clear
 cat << EOF
 
 
+
+                           ___       ___
+                          [___] /~\ [___]
+                          |ooo|.\_/.|ooo|
+                          |888||   ||888|
+                         /|888||   ||888|\
+                       /_,|###||___||###|._\
+                      /~\  ~~~ /[_]\ ~~~  /~\
+                     (O_O) /~~[_____]~~\ (O_O)
+                          (  |       |  )
+                         [~` ]       [ '~]
+                         |~~|         |~~|
+                         |  |         |  |
+                        _<\/>_       _<\/>_
+                       /_====_\     /_====_\
+
+
         The room shakes, a the sound of electric motors blasts 
         you out of nowhere.
         
@@ -494,5 +511,5 @@ fi
 # it means they are applications.
 # Try this:
 #
-# ./ghost
+# ./robot
 

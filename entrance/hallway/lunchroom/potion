@@ -12,6 +12,8 @@
 clear
 cat << EOF
 
+
+
         You have found a bright green can of some type of 
         energy drink.  
         
@@ -22,18 +24,23 @@ EOF
 read RESP
 
 if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+   clear
    cat << EOF 
 
-        The unnatural taste of caffeine, food dye, and ancient ginseng fills your 
-        mouth.  It surges through your brain and... "strengthens" you.
+
+
+        The unnatural taste of caffeine, food dye, and ancient ginseng fills
+        your mouth.  It surges through your brain and... "strengthens" you.
 
         Create a variable for your health points (HP).  You have
         15HP:
+
 
             export HP=15
 
 
 EOF
+
 else
     clear
     cat << EOF
@@ -55,7 +62,7 @@ cat << EOF
 
         You can check your health at any time:
 
-        echo \$HP
+        echo \${HP}
 
 
 EOF

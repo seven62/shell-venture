@@ -1,28 +1,34 @@
 
-    Dark clouds roll in and mask the sunlight that had just been filtering 
-    through the hallway windows. The strange darness is heavy now, making it 
-    difficult to tell what is a doorway and what is an object. 
     
-    The `ls` command you use to look around can be enhanced by adding an 
-    additonal arguement or "flag".
-
-
-        ls -F
-
-
-    Now that you're getting more visual detail, let's explain what it means:
     
-    - directories (the rooms) will end with a "/"   - example: lunchroom/
-    - encounters (scripts) end with a "*"           - example: envelope*
+        Dark clouds roll in and mask the sunlight that had just
+        been filtering through the hallway windows. The strange 
+        darness is heavy now, making it difficult to tell what 
+        is a doorway and what is an object. 
+        
+        The `ls` command can be enhanced by adding an additonal
+        arguement or "flag":
 
 
+            ls -F
 
---------------------------------------------------------------------------
-# TIP:
-# - you can avoid having to type `ls -F` every time by running:
-# 
-#     alias ls='ls -F'
-# 
-# - this creates a command ALIAS. Now typing `ls` will run `ls -F`
+
+        Now that you're getting more visual detail, let's cover
+        what it's showing you:
+        
+        - directories (the rooms) will end with a "/"   
+            - example: lunchroom/
+        
+        - encounters (scripts) end with a "*"           
+            - example: envelope*
+
+
+----------------------------------------------------------------
+TIP:
+- you can avoid having to type `ls -F` every time by running:
+
+    alias ls='ls -F'
+
+- this creates a command ALIAS. Now typing `ls` will run `ls -F`
 
 

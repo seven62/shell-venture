@@ -1,10 +1,13 @@
 
+
     This place is a strange mix of really old stuff, right next to 
     some very expensive tech. There are top notch security cameras, 
     and strangely, this parchment scroll you're reading now. Huh...
 
+
     To take a look at your surroundings, type:      ls
     To move around into various folders, type:      cd <directory>
+
 
     Try looking around and exploring this room and any items in it. 
     Then, move into the next one.
@@ -12,14 +15,14 @@
     EXAMPLES:
 
         $ ls
-        $ cat front-desk 
+        $ cat computer
         $ cd hallway
 
 
 -----------------------------------------------------------------------
-# TIP:
-# - remember to type `ls`` when you move into the next room!
-# - ALWAYS auto-complete command by using the <TAB> key. Ex:
-#   - cat f<TAB> - autofills full filename
+TIP:
+- remember to type `ls` when you move into the next room!
+- ALWAYS auto-complete command by using the <TAB> key. Ex:
+  - cat f<TAB> - autofills full filename
 
 

@@ -36,7 +36,7 @@ EOF
     read RESP
 
     if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
-        if grep  --quiet --only-matching 'access-card' <<< $BAG; then
+        if grep  --quiet --only-matching 'access-card' <<< ${BAG}; then
             clear
             cat << EOF
 

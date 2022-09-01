@@ -15,6 +15,8 @@ if ! grep  --quiet --only-matching 'access-card' <<< $BAG; then
     clear
     cat << EOF
 
+
+
         You have found a **Access Card** on a lanyard! This thing seems 
         like it will really come in handy! A light emanates from your 
         eyes as you think you MAY begin to remember this place...
@@ -34,7 +36,7 @@ if ! grep  --quiet --only-matching 'access-card' <<< $BAG; then
 EOF
 
 mv ../../../.terminal ../../../terminal 2>/dev/null
-rm ../../../computer 2>/dev/null
+#rm ../../../computer 2>/dev/null
 
 else
     echo "      This item has already been taken."

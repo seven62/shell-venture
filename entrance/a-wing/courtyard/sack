@@ -32,7 +32,7 @@ if [ "$RESP" = "y" -o "$RESP" = "Y" ];then
         rations. Add these SNACKS to your inventory:  
 
 
-            export BAG=sack,snacks,\$BAG
+            export BAG=snacks,\${BAG}
 
 
         Remember, you can check your inventory with:  

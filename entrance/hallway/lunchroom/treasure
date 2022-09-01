@@ -10,43 +10,44 @@
 # stuck, go to the repo (google classroom) and ask. We're happy to help!
 
 
-echo
 if ! grep  --quiet --only-matching coin <<< $BAG; then
-    clear
-    cat << EOF
+
+clear
+cat << EOF
 
         You have found a minty new **Quarter**! Money is always
         good to have around, right?
 
-        Prefix this item to your inventory:
+        Do you want to pick it up?  Y/n: 
+
+
+EOF
+read RESP
+
+if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+    clear
+    cat << EOF
+
+        The money is yours now! Prefix this item to 
+        your inventory:
 
 
             export BAG=coin,\$BAG
 
 
-        Remember, you can check your inventory:
-
-
-            echo \$BAG
+-----------------------------------------------------------------------
+TIP:
+- Remember, you can always check your inventory by running:
+    - echo \$BAG
 
 
 EOF
-else
-    echo "This treasure has already been taken."
-    echo
 fi
 
+else
+    clear
+    echo "This treasure has already been taken."
+    echo ""
+    echo ""
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+fi

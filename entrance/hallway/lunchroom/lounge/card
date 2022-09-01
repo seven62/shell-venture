@@ -36,7 +36,7 @@ if ! grep  --quiet --only-matching 'access-card' <<< $BAG; then
 EOF
 
 mv ../../../.terminal ../../../terminal 2>/dev/null
-#rm ../../../computer 2>/dev/null
+rm ../../../computer 2>/dev/null
 
 else
     echo "      This item has already been taken."

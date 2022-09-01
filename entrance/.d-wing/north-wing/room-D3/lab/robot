@@ -80,38 +80,39 @@ EOF
         A hit! A palpable hit! You have short-circuited the
         3-D printed robotic beast, sparks flying and zapping 
         about!      
-                    /golfclap
+                                                 /golfclap
 
 
 EOF
 
 mv ./.ladder ./ladder
 
-        cat << EOF > usb-drive
+        cat << EOF > floppy
 #!/bin/bash
-if ! grep  --quiet --only-matching 'usb-drive' <<< \$BAG; then
+if ! grep  --quiet --only-matching 'floppy' <<< \$BAG; then
     cat << eof
 
-        You have found an **USB-drive**! It popped out of the 
-        robot's torso when you smote to the ground. /flex
+        You have found an **Floppy Drive**! It popped out of the 
+        robot's torso when you smote to the ground.   /flex
+
+
+                     __............__
+                    | |            | |
+                    | |  Project   | |
+                    | |  Sentinel  | |
+                    | |____________| |
+                    |   __________   |
+                    |  |      |   |  |
+                    |__|____ _|_ _|__|
+
         
-        There's a label on the drive that says:
-
-                ________________________________________
-         ------/                                        |
-        | ---- |    +-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+   |
-        |      |    |P|r|o|j|e|c|t| |S|e|n|t|i|n|e|l|   |
-        | ---- |    +-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+   |
-         ------\                                        |
-                ----------------------------------------
-
-
-        Add it to your inventory.
+        Add it to your inventory!
 
 
 eof
 else
     cat << eof
+
 
         This item has already been taken.
 
@@ -119,7 +120,7 @@ else
 eof
 fi
 EOF
-       chmod +x usb-drive
+       chmod +x floppy
        cat << EOF > battery
 
 #!/bin/bash

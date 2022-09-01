@@ -27,7 +27,7 @@ cat << EOF
         Remember, you can check your inventory with:
 
 
-            echo \$BAG
+            echo \${BAG}
 
 
 EOF

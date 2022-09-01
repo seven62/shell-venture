@@ -1,0 +1,165 @@
+#!/bin/bash
+
+
+
+
+# access denied
+denied () {
+    clear
+    echo ''
+    echo ''
+    echo ''
+    echo '                  The terminal emits a long beep -- then displays:'
+    sleep 1
+    echo ''
+    echo ''
+    echo '             _________________________________________________________________'
+    echo '            /                                                                 \'
+    echo '           |    __________________________________________________________     |'
+    echo '           |   |                                                          |    |'
+    echo '           |   |                                                          |    |'
+    echo '           |   |                                                          |    |'
+    echo '           |   |   ####################################################   |    |'
+    echo '           |   |   #          __ __ __ __ __   __  __      __ __      #   |    |'
+    echo '           |   |   #      /\ /  /  |_ (_ (_   |  \|_ |\ |||_ |  \     #   |    |'
+    echo '           |   |   #     /--\\__\__|____)__)  |__/|__| \|||__|__/     #   |    |'
+    echo '           |   |   #                                                  #   |    |'
+    echo '           |   |   ####################################################   |    |'
+    echo '           |   |                                                          |    |'
+    echo '           |   |                                                          |    |'
+    echo '           |   |                                                          |    |'
+    echo '           |   |__________________________________________________________|    |'
+    echo '           |                                                                   |'
+    echo '            \__________________________________________________________________/'
+    echo '                   \______________________________________________________/'
+    echo ''
+    echo ''
+    echo ''
+    sleep 1
+    echo '                        YOU DO NOT HAVE THE ITEM NEEDED TO PROCEED.'
+    echo ''
+    echo ''
+}
+
+
+# access granted!
+granted () {
+    echo ''
+    echo ''
+    echo '             _________________________________________________________________'
+    echo '            /                                                                 \'
+    echo '           |    __________________________________________________________     |'
+    echo '           |   |                                                          |    |'
+    echo '           |   |                                                          |    |'
+    echo '           |   |                                                          |    |'
+    echo '           |   |   ####################################################   |    |'
+    echo '           |   |   #       __ __ __ __ __   __  __         ___ __ __  #   |    |'
+    echo '           |   |   #   /\ /  /  |_ (_ (_   / _ |__) /\ |\ | | |_ |  \ #   |    |'
+    echo '           |   |   #  /--\\__\__|____)__)  \__)| \ /--\| \| | |__|__/ #   |    |'
+    echo '           |   |   #                                                  #   |    |'
+    echo '           |   |   ####################################################   |    |'
+    echo '           |   |                                                          |    |'
+    echo '           |   |                                                          |    |'
+    echo '           |   |                                                          |    |'
+    echo '           |   |__________________________________________________________|    |'
+    echo '           |                                                                   |'
+    echo '            \__________________________________________________________________/'
+    echo '                   \______________________________________________________/'
+    echo ''
+    echo ''
+    echo ''
+    sleep 2
+    echo "                             You hear doorway to D-Wing OPEN UP!!"
+    sleep 2
+    echo ""
+    echo "                              The strange adventure continues."
+    sleep 1
+    echo ""
+    echo ""
+    echo ""
+    echo ""
+}
+
+
+
+
+# begin interaction
+
+# inventory check
+if ! grep  --quiet --only-matching 'access-card' <<< $BAG; then
+    denied
+
+else
+    # if you have card prompt user to proceed
+    if grep  --quiet --only-matching 'access-card' <<< $BAG; then
+    clear
+    cat << EOF
+
+
+                A beige computer terminal in the lobby has come alive! 
+                Now the display is glowing a fuzzy CRT green. You tap the 
+                keyboard and are met with the following prompt:  
+
+EOF
+
+    echo '             ____________________________________________________________'
+    echo '            /                                                            \'
+    echo '           |    _____________________________________________________     |'
+    echo '           |   |                                                     |    |'
+    echo '           |   |   ===============================================   |    |'
+    echo '           |   |   #  Security Interface    [ sentinel@bsd ~ ]   #   |    |'
+    echo '           |   |   #                                             #   |    |'
+    echo '           |   |   #   Access Card Status:    ## DETECTED ##     #   |    |'
+    echo '           |   |   ===============================================   |    |'
+    echo '           |   |                                                     |    |'
+    echo '           |   |                                                     |    |'
+    echo '           |   |        Would you like to proceed?                   |    |'
+    echo '           |   |                                                     |    |'
+    echo '           |   |        >                                            |    |'
+    echo '           |   |                                                     |    |'
+    echo '           |   |                                                     |    |'
+    echo '           |   |                                                     |    |'
+    echo '           |   |_____________________________________________________|    |'
+    echo '           |                                                              |'
+    echo '            \_____________________________________________________________/'
+    echo '                   \_________________________________________________/'
+    echo ''
+    echo ''
+    echo ''
+    read -p "               Y/n:  " RESP
+
+        if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+            clear
+            granted
+            mv ./.d-wing ./d-wing
+        
+        else
+            denied
+        fi
+
+    fi
+
+fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

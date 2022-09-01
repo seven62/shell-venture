@@ -1,18 +1,25 @@
 
-This gallery is interesting. You see old class photos, trophy cases, all 
-memorabilia from eras past. Even a bronze statue in the corner. 
-
-There's a lot to explore here, but it also seems to have reached a DEAD END. 
-When you're done looking around, head back to the ENTRANCE. Remember, to 
-back track one directory, you type:
 
 
-    $ cd ..
+        This gallery is interesting. You see old class photos, 
+        trophy cases, all memorabilia from eras past. Even a 
+        bronze statue in the corner. 
 
 
-If you are mapping your progress, you can always get the name of your current 
-(working) directory with this command:
+        There's a lot to explore here, but it also seems to have 
+        reached a DEAD END. When you're done looking around, head 
+        back to the ENTRANCE. Remember, to back track one directory
+        you type:
+
+            $ cd ..
 
 
-    $ pwd
+        Any items laying around you can interact with?
+
+
+---------------------------------------------------------------------
+TIP:
+- If you are mapping your progress, you can see the full path of your 
+  current location (working dir) by running:  `pwd`
+
 

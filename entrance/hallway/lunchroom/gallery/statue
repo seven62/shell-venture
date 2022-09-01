@@ -15,8 +15,9 @@ gameover () {
     clear
     cat << EOF > remnants
 
-You see the remnants of your previous location. The various items you 
-collected during your previous adventure are on the floor:  
+        You see the remnants of your previous location. The various 
+        items you collected during your previous adventure are on 
+        the floor:  
 
 $BAG
 
@@ -39,9 +40,16 @@ if [ "$0" = "./pieces" ]; then
     clear
     cat << EOF
 
-You sift through the pieces of a shattered statue.
 
-You find nothing of interest in the statue's remains.
+
+        Sifting through the pieces of a shattered statue, you 
+        find nothing of interest in the remains. 
+        
+        You could probably head back to the entrance/ and look
+        around some more. 
+        
+                            -- Psssst!  It's three levels back 
+                               from here ( 3 of these:  ../ )
 
 
 EOF
@@ -52,8 +60,11 @@ fi
 clear
 cat << EOF
 
+
+
         An interesting bronze statue stands in the 
         corner of the room.
+
 
 EOF
 
@@ -62,6 +73,8 @@ read -p "        Would you like to approach it?  Y/n: " RESP
 if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
     clear
     cat << EOF
+
+
 
             The statue springs to life, rumbling:
 
@@ -73,6 +86,8 @@ if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
         It thrusts a fist at you, hitting for 5 damage.
 
 
+
+
 EOF
 
     # this does not change the user's HP,
@@ -81,6 +96,8 @@ EOF
     if [ "$HP" -le 0 ]; then
         clear
         cat << EOF
+
+
 
         You have been accidentally KNOCKED UNCONSCIOUS
         by the statue.
@@ -93,18 +110,21 @@ EOF
     fi
 
     # perl -pe 's/coins/diamonds/' -i ./treasure
-    printf "Do you have a sword? Or something you can swing (LOL?)  Y/n: "
+    printf "    Do you have a sword? Or something you can swing (LOL?)  Y/n: "
     read RESP
     if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
        if grep  --quiet --only-matching 'flashlight' <<< $BAG; then
            clear
            cat <<EOF
 
+
+
         You strike the statue and it breaks into a pile of pieces
         on the floor! Feel free to take a look at it.
 
         However, you have taken damage. Deduct 5 from your 
         HP variable:
+
 
             let "HP=HP-5"
 
@@ -114,6 +134,8 @@ EOF
        else
        clear
        cat << EOF
+
+
 
         Oh noes!! You don't have anything you can use 
         as a weapon. Run AWAY!!!
@@ -125,13 +147,15 @@ EOF
 
 
 EOF
-           rm treasure
+#           rm treasure
       fi
     else
         clear
         cat <<EOF
 
-        Run!!!
+
+
+        !!!!!!       RUN AWAAAAAAAAYYYYYY       !!!!!!
         You have taken damage from the animated statue.
         Deduct 5 from your HP variable:
 
@@ -144,9 +168,12 @@ else
     clear
     cat << EOF
 
+
+
         You cautiously avoid the statue, following your own personal 
         "not talking to statues" rule. Who knows what may be lying 
         in wait...
+
 
 EOF
 

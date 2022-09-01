@@ -1,0 +1,62 @@
+#!/bin/bash
+#
+# If you are reading this, you have wandered out of bounds and are reading 
+# the code that drives the game. CONGRATULATIONS!
+#
+# Learning Linux is all about curiosity, so read what you can of this code 
+# and see if you can figure out what it does.
+#
+# Or just continue playing the game. Make sure to read the scrolls. If you're 
+# stuck, go to the repo (google classroom) and ask. We're happy to help!
+
+
+if grep  --only-matching '' <<< $BAG &> /dev/null; then
+    clear
+    cat << EOF
+
+            There's something on the floor, just underneath
+            the big map. You pick up an un-sealed envelope 
+            and look inside. Inside your find credentials 
+            of some kind!! REMEMBER THIS!
+
+             ------------------------------------------- 
+            #                                           #
+            #   ATTN: Faculty                           #
+            #                                           #
+            #   Keep this code secret. Do not share     #
+            #   with ANY of the students!               #
+            #                                           #
+            #                                           #
+            #        d  a  n  i  e  l  9  2  3          #
+            #                                           #
+            #                                           #
+            #                                           #
+            #                                           #
+            #-------------------------------------------#
+
+            To collect this item, you must create a 
+            VARIABLE (think placeholder) in your inventory. 
+            Add this item to your "Bag of Holding" by 
+            running:  
+
+
+                BAG=creds,
+
+
+            You can always check what's in your $BAG by 
+            running:
+
+
+                echo \$BAG
+
+
+EOF
+
+mv ../.a-wing ../a-wing 2>/dev/null
+
+
+else
+    echo "      This treasure has already been taken."
+fi
+
+

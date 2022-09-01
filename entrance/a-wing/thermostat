@@ -1,0 +1,350 @@
+#!/bin/bash
+#
+# If you are reading this, you have wandered out of bounds and are reading 
+# the code that drives the game. CONGRATULATIONS!
+#
+# Learning Linux is all about curiosity, so read what you can of this code 
+# and see if you can figure out what it does.
+#
+# Or just continue playing the game. Make sure to read the scrolls. If you're 
+# stuck, go to the repo (google classroom) and ask. We're happy to help!
+
+
+clear
+cat << EOF
+
+        To your right is a thermostat to control the air conditioning. 
+        You've been sweating ever since you "woke up" in this 
+        predicament. Maybe we can cool things down?     /fanself
+
+                         _____________________ 
+                        |    _                |
+                        |   |X| - HEAT        |
+                        |    _                |
+                        |   |_| - COOL        |
+                        |    _                |
+                        |   |_| - OFF         |
+                         ---------------------
+
+
+EOF
+
+printf "Do you want to flip the A/C to cool?  Y/n:  "
+read RESP
+
+if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+    cat << EOF
+
+        You firmly press the COOL checkbox on the screen. 
+        You feel a gentle breeze pass through the room.
+
+EOF
+    touch .buff
+else
+    printf "Maybe it's better to switch it to OFF, instead of HEAT!  Y/n:  "
+    read RESP
+    
+    if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+        echo ""
+        touch .damage
+    else
+        clear
+        cat << EOF
+
+        I, the narrator, can't see HOW cooling down could have 
+        hurt. You feel compelled to move on. 
+
+                                                  ¯\_(ツ)_/¯
+
+
+EOF
+        touch .damage
+   fi
+fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Hmm, that didn't work.
+#
+# Remember, when files end in a * 
+# it means they are applications.
+# Try this:
+#
+# ./thermostat
+#
+# If you're not seeing the * after
+# this file name, you're probably
+# forgetting to use ls -F 
+
+

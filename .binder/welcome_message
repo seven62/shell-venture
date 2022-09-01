@@ -1,0 +1,31 @@
+
+    ====================================================================
+    #                     Welcome to Shell-Venture!                    #
+    #                                                                  #
+    #  A game to teach the basics of using a POSIX (Linux, BSD, UNIX)  #
+    #  terminal, like the one you're using to read this message now!   #
+    ====================================================================
+
+    You find yourself outside in the sweltering heat of the 
+    afternoon. You're standing at the entrance of what appears to be a 
+    school... and WOW, your HEAD REALLY HURTS. What happened, and how 
+    did you get here?
+
+    As you approach the front door of "The ... Academy", you hear a  
+    "CLICK" from the front door. Was someone expecting you? Maybe it's 
+    cooler inside?
+
+    Your first move is very important. Type the following command 
+    into the terminal, and press ENTER (or RETURN):
+
+
+    cat scroll
+
+
+-----------------------------------------------------------------------
+TIP:
+
+- `cat` is the command being run (think "print" or "read")
+- `scroll` is the argument (filename) to be printed
+
+

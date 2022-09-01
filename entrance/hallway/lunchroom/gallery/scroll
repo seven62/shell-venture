@@ -1,0 +1,18 @@
+
+This gallery is interesting. You see old class photos, trophy cases, all 
+memorabilia from eras past. Even a bronze statue in the corner. 
+
+There's a lot to explore here, but it also seems to have reached a DEAD END. 
+When you're done looking around, head back to the ENTRANCE. Remember, to 
+back track one directory, you type:
+
+
+    $ cd ..
+
+
+If you are mapping your progress, you can always get the name of your current 
+(working) directory with this command:
+
+
+    $ pwd
+

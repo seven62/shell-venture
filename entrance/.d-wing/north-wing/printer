@@ -1,0 +1,369 @@
+#!/bin/bash
+#
+# If you are reading this, you have wandered out of bounds and are reading 
+# the code that drives the game. CONGRATULATIONS!
+#
+# Learning Linux is all about curiosity, so read what you can of this code 
+# and see if you can figure out what it does.
+#
+# Or just continue playing the game. Make sure to read the scrolls. If you're 
+# stuck, go to the repo (google classroom) and ask. We're happy to help!
+
+
+if [[ -e page1 && -e page2 && -e page3 ]]; then
+    clear
+    cat << EOF
+
+
+        You have managed to create a hasty notebook. Add your
+        `notebook` to your inventory.
+
+
+EOF
+    exit
+else 
+    clear
+    cat << EOF
+
+
+        You try to wrap your head around using a single
+        sheet of paper, but it all those notes will get
+        lost. 
+
+
+EOF
+
+fi
+
+# offering hint
+printf "Are you stuck? Do you need a hint?  Y/n:  "
+read RESP
+
+if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+    clear
+    cat << EOF
+
+
+            Try using your preferred search engine to find
+            some hints for:
+
+                -------------------------------------
+                |  "linux how to copy file"  | Search |
+                -------------------------------------
+
+
+EOF
+    printf "Do you need the answer?  Y/n:  "
+    read RESP
+
+    if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+        clear
+        cat << EOF
+
+        The `cp` command copies one file to a duplicate file with
+        a new name. Run these commands:
+
+
+                      command
+                      /
+                     /   original file
+                    /     /
+                   /     /    new filename
+                  /     /      /
+                 cp   page1   page2
+
+
+        There can be multiple "new files". ANSWER:
+
+
+            cp page1 page2 page3
+
+
+        After running the above answer, execute this 
+        `./printer` script again for confirmation!
+
+
+EOF
+    fi
+fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Hmm, that didn't work.
+# Remember, when files end in a * 
+# it means they are applications.
+# Try this:
+#
+# ./printer
+

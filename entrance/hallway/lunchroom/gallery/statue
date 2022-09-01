@@ -1,0 +1,461 @@
+#!/bin/bash
+#
+# If you are reading this, you have wandered out of bounds and are reading 
+# the code that drives the game. CONGRATULATIONS!
+#
+# Learning Linux is all about curiosity, so read what you can of this code 
+# and see if you can figure out what it does.
+#
+# Or just continue playing the game. Make sure to read the scrolls. If you're 
+# stuck, go to the repo (google classroom) and ask. We're happy to help!
+
+
+# you just died message
+gameover () {
+    clear
+    cat << EOF > remnants
+
+You see the remnants of your previous location. The various items you 
+collected during your previous adventure are on the floor:  
+
+$BAG
+
+
+EOF
+    curr=`basename $PWD`
+    while [ "$curr" != "entrance" ]; do
+        pushd .. &> /dev/null
+        dirs -c
+        curr=`basename $PWD`
+    done
+    unset I
+    unset HP
+    $SHELL
+}
+
+# this runs after the statue has been "destroyed"
+# and this file has been renamed to 'pieces'
+if [ "$0" = "./pieces" ]; then
+    clear
+    cat << EOF
+
+You sift through the pieces of a shattered statue.
+
+You find nothing of interest in the statue's remains.
+
+
+EOF
+    exit 1
+fi
+
+# start the statue encounter
+clear
+cat << EOF
+
+        An interesting bronze statue stands in the 
+        corner of the room.
+
+EOF
+
+read -p "        Would you like to approach it?  Y/n: " RESP
+
+if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+    clear
+    cat << EOF
+
+            The statue springs to life, rumbling:
+
+
+                WHO DARES INTRUDE UPON THE 
+                CHAMBER OF ACADEMY HISTORY??
+
+
+        It thrusts a fist at you, hitting for 5 damage.
+
+
+EOF
+
+    # this does not change the user's HP,
+    # it only calculates it after damage
+    let "HP=HP-5"
+    if [ "$HP" -le 0 ]; then
+        clear
+        cat << EOF
+
+        You have been accidentally KNOCKED UNCONSCIOUS
+        by the statue.
+
+                                        GAME OVER!
+
+EOF
+        gameover
+        exit 1
+    fi
+
+    # perl -pe 's/coins/diamonds/' -i ./treasure
+    printf "Do you have a sword? Or something you can swing (LOL?)  Y/n: "
+    read RESP
+    if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+       if grep  --quiet --only-matching 'flashlight' <<< $BAG; then
+           clear
+           cat <<EOF
+
+        You strike the statue and it breaks into a pile of pieces
+        on the floor! Feel free to take a look at it.
+
+        However, you have taken damage. Deduct 5 from your 
+        HP variable:
+
+            let "HP=HP-5"
+
+
+EOF
+           mv statue pieces
+       else
+       clear
+       cat << EOF
+
+        Oh noes!! You don't have anything you can use 
+        as a weapon. Run AWAY!!!
+        
+        You have taken damage from the animated statue.
+        Deduct 5 from your HP variable:
+
+            let "HP=HP-5"
+
+
+EOF
+           rm treasure
+      fi
+    else
+        clear
+        cat <<EOF
+
+        Run!!!
+        You have taken damage from the animated statue.
+        Deduct 5 from your HP variable:
+
+        let "HP=HP-5"
+
+
+EOF
+   fi
+else
+    clear
+    cat << EOF
+
+        You cautiously avoid the statue, following your own personal 
+        "not talking to statues" rule. Who knows what may be lying 
+        in wait...
+
+EOF
+
+fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Hmm, that didn't work.
+# Remember, when files end in a * 
+# it means they are applications.
+# Try this:
+#
+# ./statue
+

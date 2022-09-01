@@ -1,0 +1,498 @@
+#!/bin/bash
+#
+# If you are reading this, you have wandered out of bounds and are reading 
+# the code that drives the game. CONGRATULATIONS!
+#
+# Learning Linux is all about curiosity, so read what you can of this code 
+# and see if you can figure out what it does.
+#
+# Or just continue playing the game. Make sure to read the scrolls. If you're 
+# stuck, go to the repo (google classroom) and ask. We're happy to help!
+
+
+# you just died message
+gameover () {
+    clear
+    cat << EOF > remnants
+
+        You see the remnants of your previous location. The various
+        items you collected during your previous adventure are on 
+        the floor:  
+
+        $BAG
+
+
+EOF
+
+    curr=`basename $PWD`
+    while [ "$curr" != "entrance" ]; do
+        pushd .. &> /dev/null
+        dirs -c
+        curr=`basename $PWD`
+    done
+    unset I
+    unset HP
+    $SHELL
+}
+
+
+roll() {
+    printf "    Enter a number:  "
+    read NUM
+    ALPHA=$RANDOM
+    OMEGA=$RANDOM
+    A=`echo $ALPHA | cut -b 1-2`
+    O=`echo $OMEGA | cut -b 1-2`
+    let "NUM=$ALPHA % $OMEGA"
+    MONSTER=$RANDOM
+    MONSTER=`echo $MONSTER | cut -b 1-2`
+    NUM=`echo $NUM | cut -b 1-2`
+
+    echo "      The monster rolled:   " $MONSTER
+    echo "      You rolled:           " $NUM
+    
+    if [ -e ../../../.sugar-rush ]; then
+	let "NUM=NUM+2"
+	echo "      +2 bonus from TODO!"
+    echo ""
+    echo ""
+    fi
+}
+
+
+resolve() {
+    if [[ $MONSTER -eq $NUM ]]; then
+        cat << EOF
+
+        You dodge an attack, but you miss your mark as a result.
+
+        ROLL AGAIN:  
+
+
+EOF
+	    roll
+    fi
+    
+    if [[ $MONSTER -lt $NUM ]]; then
+        clear
+        cat << EOF
+
+        A hit! A palpable hit! You have short-circuited the
+        3-D printed robotic beast, sparks flying and zapping 
+        about!      
+                    /golfclap
+
+
+EOF
+
+mv ./.ladder ./ladder
+
+        cat << EOF > usb-drive
+#!/bin/bash
+if ! grep  --quiet --only-matching 'usb-drive' <<< \$BAG; then
+    cat << eof
+
+        You have found an **USB-drive**! It popped out of the 
+        robot's torso when you smote to the ground. /flex
+        
+        There's a label on the drive that says:
+
+                ________________________________________
+         ------/                                        |
+        | ---- |    +-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+   |
+        |      |    |P|r|o|j|e|c|t| |S|e|n|t|i|n|e|l|   |
+        | ---- |    +-+-+-+-+-+-+-+ +-+-+-+-+-+-+-+-+   |
+         ------\                                        |
+                ----------------------------------------
+
+
+        Add it to your inventory.
+
+
+eof
+else
+    cat << eof
+
+        This item has already been taken.
+
+
+eof
+fi
+EOF
+       chmod +x usb-drive
+       cat << EOF > battery
+
+#!/bin/bash
+if ! grep  --quiet --only-matching 'battery' <<< \$BAG; then
+        cat << eof
+
+
+        You have found a **battery**! You may be able to use
+        it to power something up. Add it to the inventory.
+
+
+eof
+else
+    cat << eof
+
+        This item has already been taken.
+
+
+eof
+
+fi
+EOF
+        chmod +x battery
+    else
+        cat << EOF
+
+
+        Your weapon swings harmlessly through the air. 
+        You take 5 damage. Deduct this from your HP 
+        variable:
+
+            let HP=HP-5
+
+
+EOF
+        let HP=HP-5
+        if [ "$HP" -le 0 ]; then
+            clear
+            cat << EOF
+
+
+        You suddenly feel cold. Your caffeine-induced 
+        energy is draining from your body. You have 
+        been accidentally KNOCKED UNCONSCIOUS by the 
+        foul robotic beast...
+
+
+                        GAME OVER!
+
+
+EOF
+            gameover
+            exit 1
+        fi
+	    roll
+        resolve
+    fi
+}
+
+
+# begin robot encounter
+clear
+cat << EOF
+
+
+        The room shakes, a the sound of electric motors blasts 
+        you out of nowhere.
+        
+        You sense that a presence has entered the room.  The panic
+        you suddenly feel assures you that you are under attack 
+        by a ghastly 3-D printed enemy!
+
+
+        If you have a broom (or anything really), you can attack! 
+        Otherwise, you should RUN!!
+
+
+EOF
+printf "            Do you want to attack?  Y/n:  "
+read RESP
+
+if [ "$RESP" = "y" -o "$RESP" = "Y" ];then
+    roll
+    resolve
+else
+    clear
+    cat << EOF
+
+
+        You wisely turn and flee.  Quickly `cd ..` to the 
+        previous room and reevaluate your life.
+
+
+EOF
+fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Hmm, that didn't work.
+# Remember, when files end in a * 
+# it means they are applications.
+# Try this:
+#
+# ./ghost
+

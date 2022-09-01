@@ -1,0 +1,33 @@
+
+    There are some things in a room (folder) that you can interact 
+    with. These encounters are called "shell scripts" and end with 
+    a "*" when listed.
+
+    They are run by typing `./` followed by the name of the 
+    encounter. For example, to interact with an item:
+
+
+        $ ./envelope
+
+
+    The . (dot) means *HERE*, and the name of the script makes the 
+    code run. This is known as a relative path, with the . representing 
+    the current room (folder).
+
+    You may have left an item in the previous room. ;) Go back to the 
+    previous directory with two dots, which means *take a step back*.
+
+
+        $ cd ..         move back one step
+        $ cd ../..      move back two steps
+        $ cd ../../..   move back three steps
+
+
+-----------------------------------------------------------------------
+# TIP:
+# - sometimes your screen can get messy and make things confusing
+# - run the `clear` command any time to unclutter and continue
+# - the `ctrl + l` keyboard shortcut does the same thing!
+
+
+c

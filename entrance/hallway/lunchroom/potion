@@ -1,0 +1,348 @@
+#!/bin/bash
+#
+# If you are reading this, you have wandered out of bounds and are reading 
+# the code that drives the game. CONGRATULATIONS!
+#
+# Learning Linux is all about curiosity, so read what you can of this code 
+# and see if you can figure out what it does.
+#
+# Or just continue playing the game. Make sure to read the scrolls. If you're 
+# stuck, go to the repo (google classroom) and ask. We're happy to help!
+
+clear
+cat << EOF
+
+        You have found a bright green can of some type of 
+        energy drink.  
+        
+        Do you want to drink it?  Y/n: 
+
+
+EOF
+read RESP
+
+if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+   cat << EOF 
+
+        The unnatural taste of caffeine, food dye, and ancient ginseng fills your 
+        mouth.  It surges through your brain and... "strengthens" you.
+
+        Create a variable for your health points (HP).  You have
+        15HP:
+
+            export HP=15
+
+
+EOF
+else
+    clear
+    cat << EOF
+
+        You weren't born yestermorn. This concoction is probably poisonous
+        for any rational person.
+
+        Create a variable for your health points (HP).  You have
+        10HP:
+
+            export HP=10
+
+
+EOF
+
+fi
+
+cat << EOF
+
+        You can check your health at any time:
+
+        echo \$HP
+
+
+EOF
+
+mv ../../.a-wing ../../a-wing 2>/dev/null
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Hmm, that didn't work.
+# Remember, when files end in a * 
+# it means they are applications.
+# Try this:
+#
+# ./potion
+

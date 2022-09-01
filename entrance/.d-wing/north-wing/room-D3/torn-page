@@ -1,0 +1,339 @@
+#!/bin/bash
+#
+# If you are reading this, you have wandered out of bounds and are reading 
+# the code that drives the game. CONGRATULATIONS!
+#
+# Learning Linux is all about curiosity, so read what you can of this code 
+# and see if you can figure out what it does.
+#
+# Or just continue playing the game. Make sure to read the scrolls. If you're 
+# stuck, go to the repo (google classroom) and ask. We're happy to help!
+
+
+if [[ -e potion ]]; then
+    clear
+    cat << EOF
+
+
+        You have summoned a potion from afar, with efficiency. You 
+        drink it quickly and feel a (moderately unhealthy) surge 
+        of strength.
+
+        Add 5 HP to your score!
+
+
+EOF
+else
+    clear
+    cat << EOF
+
+
+        A page from "The MANual" lies on the ground.  It reveals
+        to you how to retrieve a potion:
+
+        
+        ------------------------------------------------------
+        #  1. To find a file on your system, use the find 
+        #     command. For example, to search this room: 
+        #  
+        #           find . -name "potion"
+        #  
+        #  
+        #  2. Once you've found a potion, COPY it to this folder
+        #     and run this script AGAIN.
+        #  
+        #  
+        #  3. There are no potions in this room, so try searching
+        #     back at the entrance.
+        #  
+        -----------------------------------------------------------
+        
+        TIP: 
+        - use `pwd` to determine how many rooms (folders) are 
+        between you and the entrance/
+
+
+EOF
+
+fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Hmm, that didn't work.
+# Remember, when files end in a * 
+# it means they are applications.
+# Try this:
+#
+# ./spell
+

@@ -1,0 +1,586 @@
+#!/bin/bash
+#
+# If you are reading this, you have wandered out of bounds and are reading 
+# the code that drives the game. CONGRATULATIONS!
+#
+# Learning Linux is all about curiosity, so read what you can of this code 
+# and see if you can figure out what it does.
+#
+# Or just continue playing the game. Make sure to read the scrolls. If you're 
+# stuck, go to the repo (google classroom) and ask. We're happy to help!
+
+
+# you just died message
+gameover () {
+    clear
+    cat << EOF > remnants
+
+        You see the remnants of your previous location. 
+        The various items you collected during your previous 
+        adventure are on the floor:  
+
+${I}
+
+
+EOF
+    curr=`basename $PWD`
+    while [ "$curr" != "entrance" ]; do
+        pushd .. &> /dev/null
+        dirs -c
+        curr=`basename $PWD`
+    done
+    unset I
+    unset HP
+    $SHELL
+}
+roll() {
+    printf "Enter a number:  "
+    read NUM
+    ALPHA=$RANDOM
+    OMEGA=$RANDOM
+    A=`echo $ALPHA | cut -b 1-2`
+    O=`echo $OMEGA | cut -b 1-2`
+    let "NUM=$ALPHA % $OMEGA"
+    SENTRY=$RANDOM
+    SENTRY=`echo $SENTRY | cut -b 1-2`
+    NUM=`echo $NUM | cut -b 1-2`
+    echo "The sentry rolled " $SENTRY
+    echo "You rolled " $NUM
+    resolve
+}
+
+resolve() {
+    if ! grep  --quiet --only-matching 'flashlight' <<< $BAG; then
+        cat << EOF
+
+        You do not have a pepper spray (or even a flashlight LOL)!
+
+        Your attacks will QUITE less effective...
+
+
+EOF
+        let NUM=NUM-10
+    fi
+    if [[ $SENTRY -eq $NUM ]]; then
+        cat << EOF
+
+        You each parry one another's attacks.  
+
+        ROLL AGAIN:
+
+EOF
+	roll
+    fi
+    
+    if [[ $SENTRY -lt $NUM ]]; then
+        cat << EOF
+
+        A hit! You're sorry to do it, but a total  
+        "Blinded By Light" move! You have definitely 
+        stunned them. I think they're crying...
+
+
+EOF
+        clear
+        cat << EOF > treasure
+#!/bin/bash
+if ! grep  --quiet --only-matching radio <<< \$BAG; then
+    cat << EOF
+
+        You have found a handheld **Radio**! Maybe the hall 
+        monitor dropped it in the uh... misunderstanding. 
+        Who knows how handy a walkie-talkie can end up being! 
+        
+        Add it to your inventory:
+
+
+EOF
+
+else
+    echo "This item has already been taken."
+fi 
+
+EOF
+        chmod +x treasure
+        mv sentry sad-sentry
+    else
+        cat << EOF
+
+        Your bright and shiny attack is shielded by the hall
+        monitor's clipboard. 
+        
+        You take 5 points damage. Deduct this from your HP.
+
+            let HP=HP-5
+
+
+EOF
+        let HP=HP-5
+        export HP
+        if [ "$HP" -le 0 ]; then
+            clear
+            cat << EOF
+
+        You have been accidentally KNOCKED UNCONSCIOUS
+         by the hall monitor.  
+
+                                    GAME OVER!
+
+EOF
+            gameover
+            exit 1
+        fi
+	roll
+    fi
+}
+
+if [ "$0" = "./sad-sentry" ]; then
+    cat << EOF
+
+        You find the sad and very sorry hall monitor. 
+        Nothing of interest currently, apologies are 
+        made, everyone's good now. 
+                                           :thumbsup:
+
+
+EOF
+    exit 0
+fi
+
+# start
+clear
+cat << EOF
+
+        A figure comes down the stairs towards you asking 
+        WHY YOU'RE NOT IN CLASS! They forgot their glasses 
+        and can't see, but lumber toward you.
+
+
+        If you have something to deter them with, perhaps 
+        a can of pepper spray ( or a flashlight LOL? ), you 
+        can ATTACK. Otherwise, you should run.
+
+
+EOF
+printf "Do you want to attack?  Y/n:  "
+read RESP
+
+if [ "$RESP" = "y" -o "$RESP" = "Y" ];then
+    roll
+else
+    clear
+    cat << EOF
+
+        You wisely turn and flee back down the stairs. 
+        Quickly ``cd ..`` to the previous directory!
+
+
+EOF
+fi
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+##
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+
+#
+# Well that didn't work!

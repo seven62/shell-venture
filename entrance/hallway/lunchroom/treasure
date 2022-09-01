@@ -1,0 +1,52 @@
+#!/bin/bash
+#
+# If you are reading this, you have wandered out of bounds and are reading 
+# the code that drives the game. CONGRATULATIONS!
+#
+# Learning Linux is all about curiosity, so read what you can of this code 
+# and see if you can figure out what it does.
+#
+# Or just continue playing the game. Make sure to read the scrolls. If you're 
+# stuck, go to the repo (google classroom) and ask. We're happy to help!
+
+
+echo
+if ! grep  --quiet --only-matching coin <<< $BAG; then
+    clear
+    cat << EOF
+
+        You have found a minty new **Quarter**! Money is always
+        good to have around, right?
+
+        Prefix this item to your inventory:
+
+
+            export BAG=coin,\$BAG
+
+
+        Remember, you can check your inventory:
+
+
+            echo \$BAG
+
+
+EOF
+else
+    echo "This treasure has already been taken."
+    echo
+fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

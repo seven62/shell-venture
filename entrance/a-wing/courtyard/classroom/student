@@ -1,0 +1,558 @@
+#!/bin/bash
+#
+# If you are reading this, you have wandered out of bounds and are reading 
+# the code that drives the game. CONGRATULATIONS!
+#
+# Learning Linux is all about curiosity, so read what you can of this code 
+# and see if you can figure out what it does.
+#
+# Or just continue playing the game. Make sure to read the scrolls. If you're 
+# stuck, go to the repo (google classroom) and ask. We're happy to help!
+
+
+# you just died message
+gameover () {
+    clear
+    cat << EOF > remnants
+
+        You see the remnants of your previous location. 
+        The various items you collected during your previous 
+        adventure are on the floor:  
+
+${BAG}
+
+EOF
+    curr=`basename $PWD`
+    while [ "$curr" != "entrance" ]; do
+        pushd .. &> /dev/null
+        dirs -c
+        curr=`basename $PWD`
+    done
+    unset I
+    unset HP
+    $SHELL
+}
+
+kid_bite () {
+    clear
+    cat << EOF
+
+        The kid gnaws at your Bag of Holding, hoping for a
+        morsel. Finding nothing, it takes a nip at your 
+        hand for 1 point of damage.
+
+
+            let "HP=HP-1"
+
+
+        You may avoid this damage if you have some kind of 
+        sword ( LOLd ), pepper spray, (or a flashlight??) 
+        and wish to defend yourself.
+
+
+EOF
+printf "Do you want to cookie-defend against the kid?  Y/n:  "
+	read RESP
+	if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+        cat << EOF
+
+        You quickly throw him an animal cracker, instantly
+         distracting the attack. This draws the attention 
+        of the OTHER KIDS in the room.  They band together 
+        and rush at you. You do your best.
+
+
+EOF
+        let HP=HP-5
+        export HP
+        if [ "$HP" -le 0 ]; then
+            clear
+            cat << EOF
+
+        The mob of children reduces your hit points to zero.  You
+        are overwhelmed by the army of madness.
+
+
+EOF
+            gameover
+            exit 1
+        else
+            cat << EOF
+
+        But a mob of kids does not tolerate oppression, and you
+        soon find yourself sealed in supply closet. You stay,
+        perfectly preserved for 3 1/2 weeks, surviving solely 
+        on animal cookies. 
+
+        When you emerge, you may continue your adventure.
+
+
+EOF
+        fi
+	else
+        let HP=HP--
+        export HP
+	    echo "You keep things in perspective, and do not lash out at the child."
+	fi
+}
+
+cat << EOF
+
+        One of them finally notices your presence. They turn
+        their head sideways, seeming to beckon you closer.
+
+
+EOF
+printf "Do you move closer toward the harmless child?  Y/n:  "
+read RESP
+
+if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+    cat << EOF
+
+        You take a step forward, and the kid rushes toward
+        you, its mouth open wide.  
+
+
+EOF
+    printf "Do you happen to have a snacks?  Y/n:  "
+    read RESP
+
+    if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+        if grep  --quiet --only-matching snacks <<< $BAG; then
+            cat << EOF
+
+        You toss a snack at the kid, which catches it mid-air and 
+        gobbles it down.
+
+        Don't forget to remove the fish from your inventory.  Try
+        the following command:
+
+            export BAG=\$(sed "s/snacks//; s/,,/,/" <<< \$BAG)
+
+
+EOF
+        else
+            echo "You don't have any snacks!"
+            echo
+            kid_bite
+        fi
+   else
+        kid_bite
+   fi
+else
+    cat << EOF
+
+        You back away from the 4th grader carefully... It 
+        loses interest in you and wanders away.
+
+
+EOF
+
+fi
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+
+#
+# Well that didn't work!

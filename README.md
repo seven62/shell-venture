@@ -1,7 +1,7 @@
 # Welcome to shell-venture
 
-
 This is a game to teach you the basics of using a POSIX (Linux, BSD, UNIX) terminal.
+
 
 ## Getting Started
 
@@ -9,7 +9,6 @@ To jump into playing the game, you have a few options:
 
 - [clone locally](#clone-locally)
 - [online with mybinder](#online-with-mybinder)
-- []()
 
 
 ### Clone Locally
@@ -28,17 +27,12 @@ To start playing, open a terminal and clone this repo.
 
 4. Once you have something like:
 
-        ```
-        $ cd /home/your_username/Downloads/bashcrawl/entrance
-        ```
-    - in your terminal window, press RETURN.
+    - `$ cd /home/your_username/Downloads/bashcrawl/entrance`
+    - in your terminal window, press <RETURN>.
 
 5. Your first move is very important. Type this into your terminal:
 
-        ```
-        cat scroll
-        ```
-
+    - `$ cat scroll`
 
 6. Enjoy! You're now playing the game!
 
@@ -53,7 +47,7 @@ To start playing, open a terminal and clone this repo.
 > time you disconnect. Learn more about the [mybinder service](https://mybinder.readthedocs.io/en/latest/).
 
 
-## NOTES FOR macOS X
+<!-- ## NOTES FOR macOS X
 
 It appears that there is a problem with the standard `Archive Utility` that is called from `Finder` when a zip archive is double-clicked to extract to the current folder, if you're downloading the archive from GitLab rather than using git's `clone` facility to download the game.  You may find that all of the files in the destination folder are set to be executable.  This will cause great confusion as you play the game as intended, because every plain text file will be indistiguishable from executable scripts.  Here's how to avoid this problem:
 
@@ -74,5 +68,5 @@ It appears that there is a problem with the standard `Archive Utility` that is c
     cd bashcrawl-master/entrance
     ```
 
-At this point, you're in the game!  Have fun!
+At this point, you're in the game!  Have fun! -->
 

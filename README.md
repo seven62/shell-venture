@@ -1,48 +1,57 @@
-# Welcome!
+# Welcome to shell-venture
+
 
 This is a game to teach you the basics of using a POSIX (Linux, BSD, UNIX) terminal.
 
-## Try it on your machine
+## Getting Started
 
-To start playing, open a terminal.
+To jump into playing the game, you have a few options:
 
-Type the letters "cd " (just the letters, not the quotes) into the terminal...
+- [clone locally](#clone-locally)
+- [online with mybinder](#online-with-mybinder)
+- []()
 
-Then a space (press the spacebar)...
 
-Then drag and drop the ``entrance`` directory from this folder into your terminal.
+### Clone Locally
 
-If your terminal asks you what you want to do with what you have just dragged into it, select "Paste location".
-If it doesn't ask, then expect it to paste the file path of the folder you just dragged into it.
+To start playing, open a terminal and clone this repo.
 
-Once you have something like:
+1. Type the letters "cd " (just the letters, not the quotes) into the terminal...
 
-```
-$ cd /home/your_username/Downloads/bashcrawl/entrance
-```
+2. Then a space (press the spacebar)...
 
-in your terminal window, press RETURN.
-The exact path to the entrance varies, depending on where you saved the file.
+3. Then drag and drop the ``entrance`` directory from this folder into your terminal.
 
-Your first move is very important.
-Type this into your terminal:
+> Note: If your terminal asks you what you want to do with what you have just 
+> dragged into it, select "Paste location". If it doesn't ask, then expect it 
+> to paste the file path of the folder you just dragged into it.
 
-```
-cat scroll
-```
+4. Once you have something like:
 
-You are now playing the game.
-May the gods save you.
+        ```
+        $ cd /home/your_username/Downloads/bashcrawl/entrance
+        ```
+    - in your terminal window, press RETURN.
 
-## Try it online with mybinder
+5. Your first move is very important. Type this into your terminal:
+
+        ```
+        cat scroll
+        ```
+
+
+6. Enjoy! You're now playing the game!
+
+
+### Online with mybinder
 
 - Follow this link: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gl/nthiery%2Fbashcrawl/HEAD).
 - Wait a few seconds to a minute until the launcher appears.
 - Click on the Terminal icon.
 
-Note: mybinder sessions are temporary; the game is reinitialized each
-time you disconnect.
-[Learn more about the mybinder service](https://mybinder.readthedocs.io/en/latest/).
+> Note: mybinder sessions are temporary; the game is reinitialized each
+> time you disconnect. Learn more about the [mybinder service](https://mybinder.readthedocs.io/en/latest/).
+
 
 ## NOTES FOR macOS X
 
@@ -66,3 +75,4 @@ It appears that there is a problem with the standard `Archive Utility` that is c
     ```
 
 At this point, you're in the game!  Have fun!
+

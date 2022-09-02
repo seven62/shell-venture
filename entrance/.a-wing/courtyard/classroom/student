@@ -92,14 +92,19 @@ EOF
 	else
         let HP=HP--
         export HP
+        echo ""
+        echo ""
 	    echo "You keep things in perspective, and do not lash out at the child."
+        echo ""
+        echo ""
 	fi
 }
 
 cat << EOF
 
-        One of them finally notices your presence. They turn
-        their head sideways, seeming to beckon you closer.
+
+        One kid finally notices you. They turn their head 
+        sideways, seeming to beckon you closer.
 
 
 EOF
@@ -127,7 +132,7 @@ EOF
         Don't forget to remove the fish from your inventory.  Try
         the following command:
 
-            export BAG=\$(sed "s/snacks//; s/,,/,/" <<< \$BAG)
+            export BAG=\$(sed "s/snacks,//; s/,,/,/" <<< \$BAG)
 
 
 EOF
@@ -140,7 +145,11 @@ EOF
         kid_bite
    fi
 else
+    clear
     cat << EOF
+
+        
+                            PHEW!!
 
         You back away from the 4th grader carefully... It 
         loses interest in you and wanders away.

@@ -17,6 +17,29 @@ if ! grep  --quiet --only-matching 'access-card' <<< $BAG; then
 
 
 
+                                ______________________________________
+                               |                                      |
+                    _.---------|.--.                                  |
+                 .-'          ./    \                                 |
+              .-'           .' |    /|                                |
+           .-'         |   /   '.__//                                 |
+        .-'           _.--/        /                                  |
+       |        _  .-'   /        /                                   |
+       |     ._  \      /     \`  /                                   |
+       |        ' .    /     \`  /____________________________________|
+       |         \ \ '/        /
+       |        - \  /        /|
+       |        '  .'        / |
+       |          '         |.'|
+       |                    |  |
+       |                    |  |
+       |                    |.'
+       |                    /
+       |                   /
+       |                  /
+       )                 /
+
+
         You have found a **Access Card** on a lanyard! This thing seems 
         like it will really come in handy! A light emanates from your 
         eyes as you think you MAY begin to remember this place...

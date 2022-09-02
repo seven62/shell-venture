@@ -13,40 +13,46 @@
 clear
 cat << EOF
 
-        To your right is a thermostat to control the air conditioning. 
-        You've been sweating ever since you "woke up" in this 
-        predicament. Maybe we can cool things down?     /fanself
 
-                         _____________________ 
-                        |    _                |
-                        |   |X| - HEAT        |
-                        |    _                |
-                        |   |_| - COOL        |
-                        |    _                |
-                        |   |_| - OFF         |
-                         ---------------------
+        To your right is a thermostat to control the air 
+        conditioning. You've been sweating ever since you 
+        "woke up" in this predicament. Maybe we can cool 
+        things down?     /fanself
+
+                 _____________________ 
+                |    _                |
+                |   |X| - HEAT        |
+                |    _                |
+                |   |_| - COOL        |
+                |    _                |
+                |   |_| - OFF         |
+                 ---------------------
 
 
 EOF
 
-printf "Do you want to flip the A/C to cool?  Y/n:  "
-read RESP
+read -p "        Do you want to flip the A/C to cool?  Y/n:  " RESP
 
 if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+    clear
     cat << EOF
 
         You firmly press the COOL checkbox on the screen. 
         You feel a gentle breeze pass through the room.
+        
+        A powerup (buff) has been applied to your HP!
 
 EOF
     touch .buff
 else
-    printf "Maybe it's better to switch it to OFF, instead of HEAT!  Y/n:  "
-    read RESP
+    clear
+    echo ""
+    echo ""
+    read -p "        Don't ya think it'd be better to switch it to OFF?  Y/n: " RESP
     
     if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
         echo ""
-        touch .damage
+        touch .buff
     else
         clear
         cat << EOF

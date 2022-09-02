@@ -34,6 +34,8 @@ EOF
     $SHELL
 }
 roll() {
+    echo ""
+    echo ""
     printf "Enter a number:  "
     read NUM
     ALPHA=$RANDOM
@@ -41,10 +43,10 @@ roll() {
     A=`echo $ALPHA | cut -b 1-2`
     O=`echo $OMEGA | cut -b 1-2`
     let "NUM=$ALPHA % $OMEGA"
-    SENTRY=$RANDOM
-    SENTRY=`echo $SENTRY | cut -b 1-2`
+    HALLMON=$RANDOM
+    HALLMON=`echo $HALLMON | cut -b 1-2`
     NUM=`echo $NUM | cut -b 1-2`
-    echo "The sentry rolled " $SENTRY
+    echo "The hall monitor rolled " $HALLMON
     echo "You rolled " $NUM
     resolve
 }
@@ -61,7 +63,7 @@ resolve() {
 EOF
         let NUM=NUM-10
     fi
-    if [[ $SENTRY -eq $NUM ]]; then
+    if [[ $HALLMON -eq $NUM ]]; then
         cat << EOF
 
         You each parry one another's attacks.  
@@ -72,7 +74,7 @@ EOF
 	roll
     fi
     
-    if [[ $SENTRY -lt $NUM ]]; then
+    if [[ $HALLMON -lt $NUM ]]; then
         cat << EOF
 
         A hit! You're sorry to do it, but a total  
@@ -82,16 +84,17 @@ EOF
 
 EOF
         clear
-        cat << EOF > treasure
-#!/bin/bash
-if ! grep  --quiet --only-matching radio <<< \$BAG; then
-    cat << EOF
+        cat << EOF > tablet
+        #!/bin/bash
+        if ! grep  --quiet --only-matching tablet <<< \$BAG; then
+            cat << EOF
 
-        You have found a handheld **Radio**! Maybe the hall 
-        monitor dropped it in the uh... misunderstanding. 
-        Who knows how handy a walkie-talkie can end up being! 
-        
-        Add it to your inventory:
+                You have found a computer **Tablet**! Maybe the hall 
+                monitor dropped it in the uh... misunderstanding. 
+                Who knows how handy this could end up being! 
+
+                Add it to your inventory:
+
 
 
 EOF
@@ -100,10 +103,8 @@ else
     echo "This item has already been taken."
 fi 
 
-EOF
-        chmod +x treasure
-        mv sentry sad-sentry
-    else
+        chmod +x tablet
+        mv hall-monitor faculty
         cat << EOF
 
         Your bright and shiny attack is shielded by the hall
@@ -131,10 +132,9 @@ EOF
             exit 1
         fi
 	roll
-    fi
 }
 
-if [ "$0" = "./sad-sentry" ]; then
+if [ "$0" = "./faculty" ]; then
     cat << EOF
 
         You find the sad and very sorry hall monitor. 
@@ -151,6 +151,8 @@ fi
 clear
 cat << EOF
 
+
+
         A figure comes down the stairs towards you asking 
         WHY YOU'RE NOT IN CLASS! They forgot their glasses 
         and can't see, but lumber toward you.
@@ -162,7 +164,7 @@ cat << EOF
 
 
 EOF
-printf "Do you want to attack?  Y/n:  "
+printf "        Do you want to attack?  Y/n:  "
 read RESP
 
 if [ "$RESP" = "y" -o "$RESP" = "Y" ];then
@@ -171,8 +173,11 @@ else
     clear
     cat << EOF
 
+
+
         You wisely turn and flee back down the stairs. 
         Quickly ``cd ..`` to the previous directory!
+
 
 
 EOF
@@ -229,7 +234,7 @@ fi
 #
 #
 #
-##
+#
 #
 #
 #

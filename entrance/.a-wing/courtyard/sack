@@ -13,23 +13,27 @@
 clear
 cat << EOF
 
-        There's a **Paper Sack** on the ground, probably
-        fell off of some poor adventurer.
+
+        There's a **Paper Sack** on the ground, 
+        probably belonged to some unfortunate 
+        adventurer.
 
 
 EOF
 
-printf "Do you want to take the sack?  Y/n:  "
+printf "        Do you want to take the sack?  Y/n:  "
 
 read RESP
 
 if [ "$RESP" = "y" -o "$RESP" = "Y" ];then
+    clear
     cat << EOF
 
         As you take the sack, you find a Animal Crakers. 
-        The good ones too, with pink icing on them! They're 
-        probably someone's favorite emergency lunchtime 
-        rations. Add these SNACKS to your inventory:  
+        The good ones too, with pink icing on them! 
+        They're probably someone's emergency rations. 
+        
+        Add these SNACKS to your inventory:  
 
 
             export BAG=snacks,\${BAG}
@@ -37,7 +41,21 @@ if [ "$RESP" = "y" -o "$RESP" = "Y" ];then
 
         Remember, you can check your inventory with:  
 
+
             echo \$BAG
+
+
+EOF
+
+else
+    clear
+    cat << EOF
+    
+    
+    
+        O.K., I get it... you're stubborn. A brash 
+        decision is made. 
+                              -- "Bold move Cotton"
 
 
 EOF

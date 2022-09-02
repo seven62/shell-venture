@@ -1,0 +1,12 @@
+        #!/bin/bash
+        if ! grep  --quiet --only-matching tablet <<< $BAG; then
+            cat << EOF
+
+                You have found a computer **Tablet**! Maybe the hall 
+                monitor dropped it in the uh... misunderstanding. 
+                Who knows how handy this could end up being! 
+
+                Add it to your inventory:
+
+
+

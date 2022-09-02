@@ -1,0 +1,400 @@
+#!/bin/bash
+#
+# If you are reading this, you have wandered out of bounds and are reading 
+# the code that drives the game. CONGRATULATIONS!
+#
+# Learning Linux is all about curiosity, so read what you can of this code 
+# and see if you can figure out what it does.
+#
+# Or just continue playing the game. Make sure to read the scrolls. If you're 
+# stuck, go to the repo (google classroom) and ask. We're happy to help!
+
+clear
+cat << EOF
+
+
+      ___ (@)   As you turn around, an object catches your eye. 
+     |.-.|/     Upon the southern wall, there is elaborate oak
+     || |/      paneling. You notice a LEVER!
+     || /|      
+     ||/||      You move forward to take a closer look and see 
+     || ||      the outline of a hidden panel around it.
+     ||_||
+     '---'      There's also a door labeled "LIBRARY".
+
+
+
+EOF
+printf "        Do you want pull on the lever yet?   Y/n:  "
+read RESP
+
+if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+    clear
+    cat << EOF
+
+
+
+            You recall hearing the same fan noise back at the ``entrance/``.
+            Pulling the handle UP reveals another vintage computer terminal. 
+
+            Unable to hold back your curiosity, you move up to the terminal and 
+            tap the SPACEBAR. The display glows, displaying the following:
+
+
+                =============================================================
+                =============================================================
+                #                                                           #
+                #  In Bash, a symbolic link (symlink) is a                  #
+                #  *shortcut* to another file or directory.                 #
+                #                                                           #
+                #  Create one from  HERE  ==to==>  ENTRANCE                 #
+                #  by copying and running:                                  #
+                #                                                           #
+                #         ln -fs ../../../../../entrance/ hidden-doorway    #
+                #                                                           #
+                #                                                           #
+                #  Then, pass through the hidden-doorway:                   #
+                #                                                           #
+                #         cd hidden-doorway                                 #
+                #                                                           #
+                =============================================================
+
+
+EOF
+else
+    clear
+    cat << EOF
+
+
+
+        You decide it is probably best to leave these kinds
+        of things alone. Who knows, everything could be a 
+        booby trap meant to KILL YOU.
+
+
+
+EOF
+
+fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Hmm, that didn't work.
+# Remember, when files end in a * 
+# it means they are applications.
+# Try this:
+#
+# ./handle
+

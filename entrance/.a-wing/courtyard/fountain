@@ -10,7 +10,10 @@
 # stuck, go to the repo (google classroom) and ask. We're happy to help!
 
 
-damage() {
+DAMAGE=$(find .. -type f -name ".damage")
+
+
+puke() {
     clear
     cat << EOF
 
@@ -25,18 +28,19 @@ damage() {
                    %%C    >
                     _)' _( .' ,
                  __/ |_/\   " *. o
-                /` \_\ \/     %`= '_  .
+                /\` \_\ \/     %'= '_  .
                /  )   \/|      .^',*. ,
               /' /-   o/       - " % '_
              /\_/     <       = , ^ ~ .
-             )_o|----'|          .`  '
+             )_o|----'|          .*  '
          ___// (_  - (\
         ///-(    \'   \\
 
 
-        The pain snaps you out of your dazed state, and only
-        suffer -2 HP. Remember to deduct 2 points from your
-        HP variable:
+        You feel slightly weaker... like you health bar
+        flashes RED. Snapping out of your dazed state, you
+        only suffer -2 HP.
+
 
             let "HP=HP-2"
 
@@ -45,40 +49,38 @@ EOF
 
 }
 
-DAMAGE=`find .. -type f -name ".damage"`
 
-printf "        Do you want to approach the fountain?  Y/n:  "
-read RESP
+
+# begin
+clear
+echo ""
+echo ""
+read -p "   Do you want to take a drink from this drinking fountain?  Y/n: " RESP
 
 if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+    clear
+    puke
+
+
+else
+    if [ ! -z "$DAMAGE" ]; then
+	damage
+
+    else
     cat << EOF
+
 
         The fountain sparkles in the intensity of your 
         thirst. You feel drawn to it.
 
 
 EOF
-    if [ x$DAMAGE = "x" ]; then
-        cat << EOF
 
-        But you suddenly feel strength to turn away. You hear a shriek 
-        from a nearby classroom A-Wing!
-
-
-EOF
-   else
-       damage
-   fi
-else
-    if [ ! -z "$DAMAGE" ]; then
-	damage
     fi
+
 fi
 
 [ -f ../.damage ] && rm ../.damage
-#
-#
-#
 #
 #
 #

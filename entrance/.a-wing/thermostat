@@ -31,9 +31,9 @@ cat << EOF
 
 EOF
 
-read -p "        Do you want to flip the A/C to cool?  Y/n:  " RESP
+read -rp "        Do you want to flip the A/C to cool?  Y/n:  " RESP
 
-if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+if [ "$RESP" = "y" ] || [ "$RESP" = "Y" ]; then
     clear
     cat << EOF
 
@@ -48,9 +48,9 @@ else
     clear
     echo ""
     echo ""
-    read -p "        Don't ya think it'd be better to switch it to OFF?  Y/n: " RESP
+    read -rp "        Don't ya think it'd be better to switch it to OFF?  Y/n: " RESP
     
-    if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+    if [ "$RESP" = "y" ] || [ "$RESP" = "Y" ]; then
         echo ""
         touch .buff
     else

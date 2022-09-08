@@ -9,14 +9,7 @@
 # Or just continue playing the game. Make sure to read the scrolls. If you're 
 # stuck, go to the repo (google classroom) and ask. We're happy to help!
 
-clear
-cat << EOF
-
-            You see a hulking vending machine here and
-            notice all the deliciously sweet treats in
-            there       "mmmmmmmmmMMMMMMM"
-
-
+machine() {
             |############################################|
             |#|                           |##############|
             |#|  =====  ..--''`  |~~``|   |##|````````|##|
@@ -46,12 +39,26 @@ cat << EOF
             |############################################|
             \\\\\\\\\\\\\\\\\\\\\\///////////////////////
             |_________________________________________|
+}
+
+
+
+
+
+clear
+cat << EOF
+
+            You see a hulking vending machine here and
+            notice all the deliciously sweet treats in
+            there       "mmmmmmmmmMMMMMMM"
 
 
 EOF
+machine
+echo ""
+echo ""
 
-printf "        Do you have a quarter on you?  Y/n:  "
-read RESP
+read -rp "        Do you have a quarter on you?  Y/n: " RESP
 
 
 # don't have one
@@ -69,7 +76,7 @@ EOF
 }
 
 # have a coin in bag
-if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+if [ "$RESP" = "y" ] || [ "$RESP" = "Y" ]; then
     if grep  --quiet --only-matching coin <<< $BAG; then
         clear
         cat << EOF

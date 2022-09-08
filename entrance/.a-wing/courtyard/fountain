@@ -55,9 +55,9 @@ EOF
 clear
 echo ""
 echo ""
-read -p "   Do you want to take a drink from this drinking fountain?  Y/n: " RESP
+read -rp "   Do you want to take a drink from this drinking fountain?  Y/n: " RESP
 
-if [ "$RESP" = "y" -o "$RESP" = "Y" ]; then
+if [ "$RESP" = "y" ] || [ "$RESP" = "Y" ]; then
     clear
     puke
 

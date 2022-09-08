@@ -164,10 +164,9 @@ cat << EOF
 
 
 EOF
-printf "        Do you want to attack?  Y/n:  "
-read RESP
+read -rp "        Do you want to attack?  Y/n: " RESP
 
-if [ "$RESP" = "y" -o "$RESP" = "Y" ];then
+if [ "$RESP" = "y" ] || [ "$RESP" = "Y" ];then
     roll
 else
     clear

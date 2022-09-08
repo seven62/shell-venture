@@ -5,7 +5,7 @@
 
 ### short range
 
-- [ ] read -p for all user input
+- [x] read -rp for all user input
 - [x] clear in front of all `cat << EOF`
 - [x] uniform indentation
 - [x] rm creepy gods and such
@@ -20,9 +20,8 @@
         - [ ] read the opening comments for next lesson
         - [ ] comment block teaches how to add executable permissions
 
-- [ ] card file - uncomment rm command
 - [ ] add instructor guide
-- [ ] add ascii art
+- [-] add ascii art
 - [ ] basic map on entry scroll
 - [ ] cellar portal - trapdoor?
 - [ ] lab portal - hidden staircase
@@ -36,7 +35,6 @@
 - cp to combine fragments together for password
 - use nano to read a "broken" file or fix a script
 - separate into chapters - easy / medium / hard topics
-    - intro outside with 2 halves of posted sign - 2nd has
 - `gpg` to password protect script that builds the next section, password is found at another dead end
 - companion or bag folder "homeous foldericus" - contains history file and bash profile
 
@@ -249,21 +247,30 @@ https://ascii.co.uk/art/computer
   |    `  __)__________________________________________       |
   |  )   |.-------------------------------------------.|      |
   |,`._,-||                                           ||      |
-  |      ||  ___  __ _    __       _   __  ____ __  _ ||      |
-  |      || (( `| || |\  /||     ,'-`| || |'||`| \\ / ||,'`.  |
-  |      ||  .`.  || |\\/ ||    ((     ||   ||    ||  ||    `'|
-  |      || |._)) || | `  ||     `._,| ||   ||    ||  ||`--'`-|
-  |,.    ||  __________________   __________________  ||      |
-  | \`._,|| |  START NEW CITY  | |   LOAD A CITY    | ||   _,-|
-  |.__`\_|| '------------------' '------------------' ||,-' ,'|
-  |::::::||             __________________            || ,'  ;|
-  |::::::||            | SELECT SCENARIO  |           ||-._,._|
-  |:::::_||            '------------------'           ||::::::|
+  |      ||               __     __                   ||      |
+  |      ||              (_ |__||_ |  |               ||,'`.  |
+  |      ||              __)|  ||__|__|__             ||    `'|
+  |      ||                                           ||`--'`-|
+  |,.    ||              __    ___       __  __       ||      |
+  | \`._,||         \  /|_ |\ | |  |  | |__)|_        ||   _,-|
+  |.__`\_||          \/ |__| \| |  |__| | \ |__       ||,-' ,'|
+  |::::::||        __________________________         || ,'  ;|
+  |::::::||       |  TO ROOT AND BACK AGAIN  |        ||-._,._|
+  |:::::_||       '--------------------------'        ||::::::|
   |:,-'' ||_____________________o_____________________||::::::|
   |     ,`-------,----------.-------.------------------'::::::|
   |  ,         ,':::::::::::|       |::::::::::::::::::::::SSt|
   '-'---------'-------------'-------'-------------------------'
-  
+
+
+ __     __
+(_ |__||_ |  |
+__)|  ||__|__|__
+
+
+     __    ___     __  __
+\  /|_ |\ | | /  \|__)|_
+ \/ |__| \| | \__/| \ |__
   
   
       You MAY have run across some information that could

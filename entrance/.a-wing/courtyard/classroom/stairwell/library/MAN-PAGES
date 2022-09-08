@@ -325,10 +325,9 @@ cat << EOF
 
 EOF
 
-printf "Did you read it?  Y/n:  "
-read RESP
+read -rp "Did you read it?  Y/n: " RESP
 
-if [ "${RESP}" = "y" -o "${RESP}" = "Y" ]; then
+if [ "${RESP}" = "y" ] || [ "${RESP}" = "Y" ]; then
     cat << EOF
 
     The book appears to be a guide for all kinds of knowledge and 
@@ -336,11 +335,11 @@ if [ "${RESP}" = "y" -o "${RESP}" = "Y" ]; then
 
 EOF
 
-    while [ "${RESP}" = 'y' -o "${RESP}" = 'Y' ]; do
+    while [ "${RESP}" = 'y' ] || [ "${RESP}" = 'Y' ]; do
         random_page
-    
-        printf "Would you like to see another command?  Y/n:  "
-        read RESP
+        echo ""
+        echo ""
+        read -rp "Would you like to see another command?  Y/n: " RESP
     done 
 fi
 

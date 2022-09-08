@@ -1,0 +1,209 @@
+# Reviewing your Previous Bash History
+
+The way to review your bash history is to use the history command. This will 
+print out our recent commands, one command per line. This should output, at most, 
+the number of lines you selected for the HISTSIZE variable. It will probably be 
+fewer at this point:
+
+    $ history
+
+Output:
+```
+43  man bash
+44  man fc
+45  man bash
+46  fc -l -10
+47  history
+48  ls -a
+49  vim .bash_history
+50  history
+51  man history
+52  history 10
+53  history
+```
+
+To find all of the history commands that contain a specific string, you can pipe 
+the results into a grep command that searches each line for a given string. For 
+example, you can search for the lines that have cd by typing:
+
+    $ history | grep cd
+
+Output:
+```
+33  cd Pictures/
+37  cd ..
+39  cd Desktop/
+61  cd /usr/bin/
+68  cd
+83  cd /etc/
+86  cd resolvconf/
+90  cd resolv.conf.d/
+```
+
+There are many situations where being able to retrieve a list of commands you’ve 
+previously ran can be helpful. If you want to run one of those commands again, 
+your instinct may be to copy one of the commands from your output and paste it 
+into your prompt. This works, but bash comes with a number of shortcuts that 
+allow you to retrieve and then automatically execute commands from your history.
+
+
+
+
+# Executing Commands from your Bash History
+
+Printing your command history can be useful, but it doesn’t really help you 
+access those commands other than as reference.
+
+You can recall and immediately execute any of the commands returned by a history 
+operation by its number preceded by an exclamation point (!). Assuming your 
+history results aligned with those from the previous section, you could check 
+out the man page for the history command quickly by typing:
+
+    $ !51
+
+This will immediately recall and execute the command associated with the 
+history number 51.
+
+You can also execute commands relative to your current position by using the 
+!-n syntax, where “n” is replaced by the number of previous commands you want 
+to recall.
+
+As an example, say you ran the following two commands:
+
+    $ ls /usr/share/common-licenses
+    $ echo hello
+
+If you wanted to recall and execute the command you ran before your most recent 
+one (the ls command), you could type !-2:
+
+    $ !-2
+
+To re-execute the last command you ran, you could run !-1. However, bash 
+provides a shortcut consisting of two exclamation points which will substitute 
+the most recent command and execute it:
+
+    $ !!
+
+Many people use this when they type a command but forgot that they needed sudo 
+privileges for it to execute. Typing sudo !! will re-execute the command with 
+sudo in front of it:
+
+    $ touch /etc/hello
+
+Output:
+
+touch: cannot touch `/etc/hello': Permission denied
+sudo !!
+Output
+sudo touch /etc/hello
+[sudo] password for sammy:
+This demonstrates another property of this syntax: these shortcuts are pure substitutions, and can be incorporated within other commands at will.
+
+
+
+
+# Scrolling through Bash History
+
+There are a few ways that you can scroll through your bash history, putting 
+each successive command on the command line to edit.
+
+The most common way of doing this is to press the up arrow key at the command 
+prompt. Each additional press of the up arrow key will take you further back in 
+your command line history.
+
+If you need to go the other direction, the down arrow key traverses the history 
+in the opposite direction, finally bringing you back to your current empty prompt.
+
+If moving your hand all the way over to the arrow keys seems like a big hassle, 
+you can move backwards in your command history using the CTRL + P combination 
+and use the CTRL + N combination to move forward through your history again.
+
+If you want to jump back to the current command prompt, you can do so by pressing 
+    META + >. In most cases, the “meta” key is the ALT key, so META + > will 
+    mean pressing ALT + SHIFT + .. This is useful if you find yourself far back 
+    in your history and want to get back to your empty prompt.
+
+You can also go to the first line of your command history by doing the opposite 
+maneuver and typing META + <. This typically means pressing ALT + SHIFT + ,.
+
+To summarize, these are some keys and key combinations you can use to scroll 
+through the history and jump to either end:
+
+- UP arrow key: Scroll backwards in history
+- CTRL + P: Scroll backwards in history
+- DOWN arrow key: Scroll forwards in history
+- CTRL + N: Scroll forwards in history
+- ALT + SHIFT + .: Jump to the end of the history (most recent)
+- ALT+ SHIFT + ,: Jump to the beginning of the history (most distant)
+
+
+
+
+# Searching through Bash History
+
+Although piping the history command through grep can be a useful way to narrow 
+down the results, it isn’t ideal in many situations.
+
+Bash includes search functionality for its history. The typical way of using 
+this is through searching backwards in history (most recent results returned first) 
+using the CTRL + R key combination.
+
+For instance, you can type CTRL + R, and begin typing part of the previous
+ command. You only have to type out part of the command. If it matches an unwanted 
+ command instead, you can press CTRL + R again for the next result.
+
+If you accidentally pass the command you wanted, you can move in the opposite 
+direction by typing CTRL + S. This also can be useful if you’ve moved to a 
+different point in your history using the keys in the last section and wish 
+to search forward.
+
+Be aware that, in many terminals, the CTRL + S combination is mapped to suspend 
+the terminal session. This will intercept any attempts to pass CTRL + S to bash, and will “freeze” your terminal. To unfreeze, type CTRL + Q to unsuspend the session.
+
+This suspend and resume feature is not needed in most modern terminals, and you 
+can turn it off without any problem by running the following command:
+
+stty -ixon
+stty is a utility that allows you to change your terminal’s settings from the 
+command line. You could add this stty -ixon command to the end of your ~/.bashrc 
+file to make this change permanent as well.
+
+If you try searching with CTRL + S again now, it should work as expected to allow 
+you to search forwards.
+
+
+
+# Searching after You’ve Typed Part of the Command
+
+A common scenario to find yourself in is to type in part of a command, only to 
+then realize that you have executed it previously and can search the history for it.
+
+The correct way of searching using what is already on your command line is to 
+move your cursor to the beginning of the line with CTRL + A, call the reverse 
+history with CTRL + R, paste the current line into the search with CTRL + Y, and 
+then using the CTRL + R again to search in reverse.
+
+For instance, suppose you want to update your package cache on an Ubuntu system. 
+You’ve already typed this out recently, but you didn’t think about that until 
+after you’ve typed the sudo in the prompt again:
+
+    $ sudo
+
+At this point, you realize that this is an operation you’ve definitely done in 
+the past day or so. You can press CTRL + A to move your cursor to the beginning 
+of the line. Then, press CTRL + R to call your reverse incremental history 
+search. This has a side effect of copying all of the content on the command 
+line that was after our cursor position and putting it into your clipboard.
+
+Next, press CTRL + Y to paste the command segments that you just copied from the 
+command line into the search. Lastly, press CTRL + R to move backwards in your 
+history, searching for commands containing the content you’ve just pasted.
+
+Using shortcuts like this may seem tedious at first, but it can be quite useful 
+when you get used to it. It is extremely helpful when you find yourself in a 
+position where you’ve typed out half of a complex command and know you’re going 
+to need the history to finish the rest.
+
+Rather than thinking of these as separate key combinations, it may help you to 
+think of them as a single compound operation. You can just hold the CTRL key 
+down and then press A, R, Y, and then the R key down in succession.

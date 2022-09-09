@@ -28,15 +28,18 @@
 
 
 ### log range
+---
 
+- [ ] change theme to movie Wargames
 - [ ] add colors
-- ~~rm - destroy dangerous items / rooms~~
 - create a gamelog file in ~ at start, all suggested commands should be added with nano
 - cp to combine fragments together for password
 - use nano to read a "broken" file or fix a script
 - separate into chapters - easy / medium / hard topics
 - `gpg` to password protect script that builds the next section, password is found at another dead end
 - companion or bag folder "homeous foldericus" - contains history file and bash profile
+
+
 
 
 ---
